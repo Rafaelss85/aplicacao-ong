@@ -1,3 +1,4 @@
+//@ts-check
 const connection = require('../database/conncection');
 
 module.exports = {
@@ -40,7 +41,7 @@ module.exports = {
             .select('ong_id')
             .first();
 
-        if (incident.ong_id != ong_id) {
+        if (incident.ong_id !== ong_id) {
             return res.status(401).json({ error: 'Operation not permitted' });
         }
 
